@@ -1,4 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    font-family: "Nunito Sans", sans-serif;
+    color: darkslategrey;
+}
+
 body {
     margin: 0px;
     background-color: peachpuff;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 4fr 1fr;
+    min-height: 100vh;
+}
+
+#gui-div {
+    background-color: peachpuff;
+    position: fixed;
+}
+
+#enemy-div {
+    background-color: lightsalmon;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1f;
+}
+
+input[type="button"] {
+    width: 200px;
+    height: 50px;
+}
+
+.enemy-card {
+    background-color: brown;
+    width: 90%;
+    height: 0px;
+    padding-bottom: 90%;
+    justify-self: center;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    border-radius: 15px;
+}
+
+.enemy-card div {
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.enemy-card p {
+    background-color: peachpuff;
+    padding: 4px;
+    border-radius: 15px;
+}
+
+.enemy-title {
+    background-color: peachpuff;
+    padding: 2px;
+    width: 50%;
+    border-radius: 15px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.enemy-card img {
+    margin-top: 5%;
+    width: 60%;
+    border-radius: 15px;
 }
