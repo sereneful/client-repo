@@ -14,6 +14,11 @@ body {
     min-height: 100vh;
 }
 
+#gui-div {
+    background-color: peachpuff;
+    position: fixed;
+}
+
 #enemy-div {
     background-color: lightsalmon;
     width: 100%;
