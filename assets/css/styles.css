@@ -17,18 +17,26 @@ body {
 #gui-div {
     background-color: peachpuff;
     position: fixed;
+    width: 70%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
 }
 
 #enemy-div {
     background-color: lightsalmon;
     width: 100%;
     display: grid;
-    grid-template-columns: 1f;
+    grid-template-columns: 1fr;
 }
 
 input[type="button"] {
     width: 200px;
     height: 50px;
+}
+
+input[type="text"]:focus {
+    outline: 0;
 }
 
 .enemy-card {

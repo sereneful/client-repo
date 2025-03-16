@@ -1,22 +1,35 @@
 // main.js: Contains client-side logic for handling form submissions, UI updates, and interactions.
 
 let btn = document.getElementById("btn");
-let btn1 = document.getElementById("btn1");
-
+let input = document.getElementById("txt-field");
+let resultTxt = document.getElementById("result-txt");
 let div = document.getElementById("enemy-div");
 
-btn.onclick = function(){
-    test("adult-black-dragon");
+btn.onclick = 
+function(){
+    loadEnemy(input.value);
 };
 
-btn1.onclick = function(){
-    test("goblin");
-};
+async function loadEnemy(enemy){
 
-async function test(enemy){
+    if(enemy == ""){
+        resultTxt.innerHTML = "INVALID ENEMY NAME";
+        return;
+    }
+
+    enemy = enemy.replace(/\s+/g, '-').toLowerCase();
+    console.log(enemy);
+
     let data = await fetch("https://www.dnd5eapi.co/api/2014/monsters/" + enemy)
     let dataTxt = await data.text();
-    let dataJSON = await JSON.parse(dataTxt);
+    let dataJSON
+    try {
+        dataJSON = await JSON.parse(dataTxt);
+    } catch (error) {
+        resultTxt.innerHTML = "INVALID ENEMY NAME";
+        return;
+    }
+    
     console.log(dataJSON);
 
     let node = document.createElement("div");
@@ -43,6 +56,7 @@ async function test(enemy){
     name.classList.add("enemy-title")
     node.classList.add("enemy-card");
     div.appendChild(node);
+    resultTxt.innerHTML = "Added Enemy Card!";
 }
 
 function getAC(arr){
@@ -53,4 +67,3 @@ function getAC(arr){
     return ac;
 }
 
-test();
