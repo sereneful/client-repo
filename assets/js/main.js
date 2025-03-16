@@ -1,11 +1,20 @@
 // main.js: Contains client-side logic for handling form submissions, UI updates, and interactions.
 
 let btn = document.getElementById("btn");
-let div = document.getElementById("enemy-div");
-btn.onclick = test;
+let btn1 = document.getElementById("btn1");
 
-async function test(){
-    let data = await fetch("https://www.dnd5eapi.co/api/2014/monsters/adult-black-dragon/")
+let div = document.getElementById("enemy-div");
+
+btn.onclick = function(){
+    test("adult-black-dragon");
+};
+
+btn1.onclick = function(){
+    test("goblin");
+};
+
+async function test(enemy){
+    let data = await fetch("https://www.dnd5eapi.co/api/2014/monsters/" + enemy)
     let dataTxt = await data.text();
     let dataJSON = await JSON.parse(dataTxt);
     console.log(dataJSON);
