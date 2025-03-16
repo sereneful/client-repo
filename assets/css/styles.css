@@ -7,17 +7,25 @@
 
 body {
     margin: 0px;
-    background-color: peachpuff;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 4fr 1fr;
+    background-color: lightsalmon;
     min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
+#login-div {
+    background-color: peachpuff;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    width: 70vw;
 }
 
 #gui-div {
     background-color: peachpuff;
     position: fixed;
-    width: 70%;
+    width: 80%;
+    height: 100%;
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
@@ -25,9 +33,9 @@ body {
 
 #enemy-div {
     background-color: lightsalmon;
-    width: 100%;
+    margin-left: 80%;
+    width: 20%;
     display: grid;
-    grid-template-columns: 1fr;
 }
 
 input[type="button"] {
